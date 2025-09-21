@@ -1,339 +1,679 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Church De-escalation Training</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .feedback-text {
-            display: none;
-        }
-        .feedback-text.visible {
-            display: block;
-        }
-        .option-btn {
-            transition: background-color 0.2s;
-        }
-        .option-btn.selected {
-            background-color: #3b82f6; /* blue-500 */
-            color: white;
-        }
-        .option-btn.correct {
-            background-color: #22c55e; /* green-500 */
-            color: white;
-            border-color: #16a34a; /* green-600 */
-        }
-        .option-btn.incorrect {
-            background-color: #ef4444; /* red-500 */
-            color: white;
-            border-color: #dc2626; /* red-600 */
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
-
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold leading-tight text-gray-900">De-escalating Agitated People</h1>
-            <p class="mt-1 text-md text-gray-600">Equipping churches to be safe and welcoming spaces for all.</p>
-        </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div class="px-4 py-6 sm:px-0">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <!-- Main Content Column -->
-                <div class="md:col-span-2 space-y-8">
-
-                    <!-- Introduction -->
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h2 class="text-2xl font-semibold text-gray-900 mb-3">Welcome and Purpose</h2>
-                        <p class="text-gray-700">
-                            This page outlines principles and techniques to compassionately and safely de-escalate situations with individuals who may be disruptive due to distress, intoxication, or mental health challenges. Our goal is to maintain a peaceful environment while showing Christ's love to those in need.
-                        </p>
-                    </div>
-
-                    <!-- Core Principles -->
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Core Principles of De-escalation</h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <!-- Principle 1: Stay Calm -->
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-medium">Stay Calm (Yourself)</h3>
-                                    <p class="text-gray-600 mt-1">Your calm presence is contagious. Speak slowly and in a low tone. Control your breathing and non-verbal cues (e.g., uncross your arms).</p>
-                                </div>
-                            </div>
-                            <!-- Principle 2: Personal Space -->
-                            <div class="flex items-start space-x-4">
-                               <div class="flex-shrink-0">
-                                    <svg class="h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-medium">Respect Personal Space</h3>
-                                    <p class="text-gray-600 mt-1">Stand at least 1.5 metres away. A non-threatening, hands-visible stance is best. Don't block their exit route.</p>
-                                </div>
-                            </div>
-                            <!-- Principle 3: Listen -->
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-medium">Listen Actively - Validate Emotion</h3>
-                                    <p class="text-gray-600 mt-1">Allow them to vent. Validate their emotions ("I see that has made you feel angry") without necessarily agreeing with their actions.</p>
-                                </div>
-                            </div>
-                            <!-- Principle 4: Empathy -->
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-medium">Show Empathy & help to find options</h3>
-                                    <p class="text-gray-600 mt-1">Try to understand their perspective & help to find options "Help me understand what's happening" Use a compassionate and non-judgmental tone. Be sure to allow choices.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Training Video -->
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Training Video: Verbal De-escalation</h2>
-                        <div class="aspect-w-16 aspect-h-9">
-                            <iframe src="https://www.youtube.com/embed/4qsfBCatgX8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Video Recap -->
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Key Takeaways</h2>
-                        <ul class="space-y-4 text-gray-700">
-                            <li class="flex items-start">
-                                <svg class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div>
-                                    <h3 class="font-semibold">Prepare:</h3>
-                                    <p>Your body language is the first thing people notice. Take a deep breath and calm yourself. Try to be as relaxed as possible. Maintain a calm, open stance (no crossed arms), keep your hands visible, and respect personal space. Your facial expression should be neutral and compassionate, not judgmental. Use a low, calm tone of voice. Speak slowly and evenly. The volume and speed of your speech can either escalate or de-escalate the tension.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div>
-                                    <h3 class="font-semibold">Validate Emotion:</h3>
-                                    <p>Don't interrupt. Let the person vent their frustrations. Reflect their feelings back to them (e.g., "It sounds like you're feeling ignored"). This validates their emotion and shows you are genuinely trying to understand. Do this in your own natural way. Continue until they can see that you accept their emotional state and are not judging them for it. "Until they feel validated."</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div>
-                                    <h3 class="font-semibold">Help them find options:</h3>
-                                    <p>It is important that an agitated person doesn't feel backed into a corner. Be sure to help them explore their choices. As they calm a little you might be able to help them with some options. e.g. "You could go in and shout at the vicar in front of everyone, but someone would probably call the police, or you could meet with the vicar after the service and talk about your concerns then. </p>
-                                </div>
-                            </li>
-                             <li class="flex items-start">
-                                <svg class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div>
-                                    <h3 class="font-semibold">Allow for choice:</h3>
-                                    <p>This empowers the agitated person to regain control. Offer positive choices. You might suggest... "Would it be helpful to talk with the vicar after this service, or perhaps we could make an appointment for you to raise your concerns later in the week when you are feeling a bit calmer?"</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Interactive Scenarios -->
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Practice Scenarios</h2>
-                        <div id="scenarios-container" class="space-y-8">
-                            <!-- Scenarios will be injected here by JavaScript -->
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Sidebar Column -->
-                <div class="md:col-span-1 space-y-8">
-                    
-                    <!-- Escalation Plan -->
-                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg shadow">
-                        <h3 class="text-xl font-semibold text-red-800 mb-3 flex items-center">
-                            <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                            </svg>
-                            When De-escalation Fails
-                        </h3>
-                        <p class="text-red-700 mb-4">If the situation escalates or you feel unsafe, your safety is the priority. Follow these steps:</p>
-                        <ol class="list-decimal list-inside space-y-2 text-red-700">
-                            <li><strong>Signal for Help:</strong> Discreetly get the attention of another team member or leader.</li>
-                            <li><strong>Create Distance:</strong> Increase the space between you and the individual.</li>
-                            <li><strong>Isolate (if possible):</strong> Guide others away from the immediate area.</li>
-                            <li><strong>Do Not Hesitate to Call 111:</strong> If there is any threat of violence or immediate danger, call emergency services. Clearly state your location and the nature of the situation.</li>
-                        </ol>
-                    </div>
-
-                    <!-- NZ Resources -->
-                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg shadow">
-                        <h3 class="text-xl font-semibold text-blue-800 mb-3">NZ Support Resources</h3>
-                        <ul class="space-y-3 text-blue-700">
-                            <li>
-                                <p class="font-semibold">Emergency Services</p>
-                                <a href="tel:111" class="hover:underline"><strong>111</strong> (for immediate danger)</a>
-                            </li>
-                            <li>
-                                <p class="font-semibold">National Mental Health & Addiction Helpline</p>
-                                <p>Need to talk? Free call or text <a href="tel:1737" class="hover:underline"><strong>1737</strong></a> anytime.</p>
-                            </li>
-                             <li>
-                                <p class="font-semibold">Mental Health Foundation of NZ</p>
-                                <a href="https://mentalhealth.org.nz" target="_blank" rel="noopener noreferrer" class="hover:underline">mentalhealth.org.nz</a>
-                            </li>
-                            <li>
-                                <p class="font-semibold">Community Alcohol and Drug Services (CADS)</p>
-                                <a href="https://www.cads.org.nz" target="_blank" rel="noopener noreferrer" class="hover:underline">cads.org.nz</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white mt-8">
-        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center text-gray-500">
-            <p>&copy; 2024 Church Safety Training. Be wise, be compassionate, be safe.</p>
-        </div>
-    </footer>
-
-    <script>
-        const scenarios = [
-            {
-                id: 1,
-                title: "Person Appears Intoxicated",
-                description: "A man stumbles into the foyer during the service. He smells of alcohol, is slurring his words, and is speaking loudly, distracting others.",
-                options: [
-                    { text: "Immediately tell him to leave or you'll call the police.", isCorrect: false, feedback: "This is confrontational and likely to escalate the situation. Threats can provoke an aggressive or defensive reaction." },
-                    { text: "Quietly approach him, introduce yourself, and ask if he's okay and if you can get him a glass of water.", isCorrect: true, feedback: "Correct. This is a gentle, caring approach that de-escalates by showing concern and offering help, rather than starting a conflict." },
-                    { text: "Ignore him and hope he leaves on his own.", isCorrect: false, feedback: "Ignoring the situation abdicates responsibility for the safety and peace of the environment. The issue is unlikely to resolve itself and may worsen." },
-                    { text: "Ask several large members of the congregation to escort him out.", isCorrect: false, feedback: "This can be perceived as a physical threat and can quickly escalate the situation to violence. It should only be a last resort if safety is compromised." }
-                ],
-            },
-            {
-                id: 2,
-                title: "Angry and Agitated Individual",
-                description: "A woman approaches the welcome desk after the service, shouting that the church 'stole her parking spot'. She is visibly angry, clenching her fists and using profane language.",
-                options: [
-                    { text: "Argue with her and explain that the car park is public and she's mistaken.", isCorrect: false, feedback: "Arguing invalidates their feelings and puts you in an adversarial position, which will only increase their anger." },
-                    { text: "Tell her to calm down and stop swearing in a church.", isCorrect: false, feedback: "Telling an angry person to 'calm down' or policing their language often feels dismissive and can make them even more agitated." },
-                    { text: "Listen to her rant, validate her frustration by saying 'I can see you're very upset,' and ask 'How can we help make this right?'", isCorrect: true, feedback: "Correct. By validating their feelings (not their actions), you show you're listening. This lowers their defenses and moves the conversation toward a solution." },
-                    { text: "Walk away and get the senior pastor to deal with her.", isCorrect: false, feedback: "While getting a leader can be a good step, simply walking away can feel dismissive and might escalate their attempts to be heard." }
-                ],
-            },
-            {
-                id: 3,
-                title: "Person in Apparent Mental Distress",
-                description: "During a quiet moment of prayer, a person begins talking to themselves loudly, referencing things that don't make sense. They seem distressed and unaware of their surroundings.",
-                options: [
-                    { text: "Calmly and quietly approach them, maintaining a safe distance. Speak in a low, gentle voice and ask, 'You seem to be in distress. Is there anything I can do to help?'", isCorrect: true, feedback: "Correct. A calm, non-threatening approach is crucial. Acknowledging their distress without judgment opens a door for communication while maintaining safety." },
-                    { text: "Go over and tap them on the shoulder to get their attention.", isCorrect: false, feedback: "Unexpected physical contact can be startling and frightening to someone in distress, potentially escalating their fear or causing an unpredictable reaction." },
-                    { text: "Announce to the congregation that someone needs help and to please give them space.", isCorrect: false, feedback: "This would draw unwanted attention and likely cause the person significant embarrassment or increased anxiety, making the situation worse." },
-                    { text: "Immediately call 111 as they are clearly having a psychotic episode.", isCorrect: false, feedback: "While a valid step if there's a threat, it's premature here. The first step should always be a calm attempt to assess and de-escalate, unless there is immediate danger." }
-                ],
-            },
-            {
-                id: 4,
-                title: "Couple Arguing Loudly",
-                description: "In the church cafe, a couple begins to have a heated, personal argument. Their voices are rising, and people are starting to stare uncomfortably.",
-                options: [
-                    { text: "Interrupt them and tell them this is a church and they need to take their fight elsewhere.", isCorrect: false, feedback: "This is shaming and confrontational. It will likely redirect their anger towards you and escalate the public scene." },
-                    { text: "Approach them calmly and quietly ask, 'It seems like a difficult moment. Would there be a more private space where you could talk?'", isCorrect: true, feedback: "Correct. This approach is respectful, non-judgmental, and offers a practical solution. It acknowledges their conflict without taking sides and aims to restore peace to the public area." },
-                    { text: "Pretend you don't hear it and instruct the cafe staff to ignore them.", isCorrect: false, feedback: "Ignoring a disruptive conflict neglects your duty of care for the overall environment. Other members may feel unsafe or uncomfortable, and the conflict could escalate." },
-                    { text: "Go over and try to mediate their argument by asking what the problem is.", isCorrect: false, feedback: "Never get involved in the content of a domestic dispute. It is not your role to be a counselor, and you could easily make things worse or even put yourself in danger." }
-                ],
-            }
-        ];
-
-        const scenariosContainer = document.getElementById('scenarios-container');
-
-        function createScenarioCard(scenario) {
-            const card = document.createElement('div');
-            card.className = 'scenario-card border border-gray-200 p-5 rounded-lg';
-            card.dataset.id = scenario.id;
-
-            let optionsHtml = '';
-            scenario.options.forEach((option, index) => {
-                optionsHtml += `
-                    <div class="option-wrapper mt-2">
-                        <button data-correct="${option.isCorrect}" data-feedback="${option.feedback}" class="option-btn w-full text-left p-3 border rounded-md hover:bg-gray-100">${option.text}</button>
-                        <div class="feedback-text p-3 mt-2 rounded-md text-sm"></div>
-                    </div>
-                `;
-            });
-
-            card.innerHTML = `
-                <h3 class="text-xl font-semibold text-gray-800">${scenario.title}</h3>
-                <p class="text-gray-600 mt-2 mb-4">${scenario.description}</p>
-                <p class="font-semibold text-gray-700 mb-2">Choose the best response:</p>
-                <div class="options-container">${optionsHtml}</div>
-            `;
-            return card;
-        }
-
-        scenarios.forEach(scenario => {
-            const card = createScenarioCard(scenario);
-            scenariosContainer.appendChild(card);
-        });
-
-        scenariosContainer.addEventListener('click', function(e) {
-            if (e.target.classList.contains('option-btn')) {
-                const card = e.target.closest('.scenario-card');
-                if (card.classList.contains('answered')) return; // Prevent re-answering
-
-                card.classList.add('answered');
-                
-                const selectedBtn = e.target;
-                const isCorrect = selectedBtn.dataset.correct === 'true';
-                const feedbackText = selectedBtn.dataset.feedback;
-                
-                const feedbackEl = selectedBtn.nextElementSibling;
-                feedbackEl.textContent = feedbackText;
-                feedbackEl.classList.add('visible');
-
-                if (isCorrect) {
-                    selectedBtn.classList.add('correct');
-                    feedbackEl.classList.add('bg-green-100', 'text-green-800', 'border-l-4', 'border-green-500');
-                } else {
-                    selectedBtn.classList.add('incorrect');
-                    feedbackEl.classList.add('bg-red-100', 'text-red-800', 'border-l-4', 'border-red-500');
-                }
-
-                const allButtons = card.querySelectorAll('.option-btn');
-                allButtons.forEach(btn => {
-                    btn.disabled = true;
-                    if (btn.dataset.correct === 'true' && btn !== selectedBtn) {
-                        btn.classList.add('correct');
-                    }
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Church De-escalation Training</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+        }
+
+        .feedback-text {
+
+            display: none;
+
+        }
+
+        .feedback-text.visible {
+
+            display: block;
+
+        }
+
+        .option-btn {
+
+            transition: background-color 0.2s;
+
+        }
+
+        .option-btn.selected {
+
+            background-color: #3b82f6; /* blue-500 */
+
+            color: white;
+
+        }
+
+        .option-btn.correct {
+
+            background-color: #22c55e; /* green-500 */
+
+            color: white;
+
+            border-color: #16a34a; /* green-600 */
+
+        }
+
+        .option-btn.incorrect {
+
+            background-color: #ef4444; /* red-500 */
+
+            color: white;
+
+            border-color: #dc2626; /* red-600 */
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+
+
+    <!-- Header -->
+
+    <header class="bg-white shadow-sm">
+
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+
+            <h1 class="text-3xl font-bold leading-tight text-gray-900">De-escalating Agitated People</h1>
+
+            <p class="mt-1 text-md text-gray-600">Equipping churches to be safe and welcoming spaces for all.</p>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+
+        <div class="px-4 py-6 sm:px-0">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+
+                <!-- Main Content Column -->
+
+                <div class="md:col-span-2 space-y-8">
+
+
+
+                    <!-- Introduction -->
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-3">Welcome and Purpose</h2>
+
+                        <p class="text-gray-700">
+
+                            This training outlines principles and techniques to compassionately and safely de-escalate situations with individuals who may be disruptive due to distress, intoxication, or mental health challenges. Our goal is to maintain a peaceful environment while showing Christ's love to those in need.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Core Principles -->
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Core Principles of De-escalation</h2>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                            <!-- Principle 1: Stay Calm -->
+
+                            <div class="flex items-start space-x-4">
+
+                                <div class="flex-shrink-0">
+
+                                    <svg class="h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-lg font-medium">Stay Calm (Yourself)</h3>
+
+                                    <p class="text-gray-600 mt-1">Your calm presence is contagious. Speak slowly and in a low tone. Control your breathing and non-verbal cues (e.g., uncross your arms).</p>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Principle 2: Personal Space -->
+
+                            <div class="flex items-start space-x-4">
+
+                               <div class="flex-shrink-0">
+
+                                    <svg class="h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-lg font-medium">Respect Personal Space</h3>
+
+                                    <p class="text-gray-600 mt-1">Stand at least 1.5 metres away. A non-threatening, hands-visible stance is best. Don't block their exit route.</p>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Principle 3: Listen -->
+
+                            <div class="flex items-start space-x-4">
+
+                                <div class="flex-shrink-0">
+
+                                    <svg class="h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-lg font-medium">Listen Actively - Validate Emotion</h3>
+
+                                    <p class="text-gray-600 mt-1">Allow them to vent. Validate their emotions ("I see that has made you feel angry") without necessarily agreeing with their actions.</p>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Principle 4: Empathy -->
+
+                            <div class="flex items-start space-x-4">
+
+                                <div class="flex-shrink-0">
+
+                                    <svg class="h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-lg font-medium">Show Empathy & help to find options</h3>
+
+                                    <p class="text-gray-600 mt-1">Try to understand their perspective & help to find options "Help me understand what's happening" Use a compassionate and non-judgmental tone. Be sure to allow choices.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Training Video -->
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Training Video: Verbal De-escalation</h2>
+
+                        <div class="aspect-w-16 aspect-h-9">
+
+                            <iframe src="https://www.youtube.com/embed/4qsfBCatgX8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg"></iframe>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Video Recap -->
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Key Takeaways</h2>
+
+                        <ul class="space-y-4 text-gray-700">
+
+                            <li class="flex items-start">
+
+                                <svg class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                                <div>
+
+                                    <h3 class="font-semibold">Prepare:</h3>
+
+                                    <p>Your body language is the first thing people notice. Take a deep breath and calm yourself. Try to be as relaxed as possible. Maintain a calm, open stance (no crossed arms), keep your hands visible, and respect personal space. Your facial expression should be neutral and compassionate, not judgmental. Use a low, calm tone of voice. Speak slowly and evenly. The volume and speed of your speech can either escalate or de-escalate the tension.</p>
+
+                                </div>
+
+                            </li>
+
+                            <li class="flex items-start">
+
+                                <svg class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                                <div>
+
+                                    <h3 class="font-semibold">Validate Emotion:</h3>
+
+                                    <p>Don't interrupt. Let the person vent their frustrations. Reflect their feelings back to them (e.g., "It sounds like you're feeling ignored"). This validates their emotion and shows you are genuinely trying to understand. Do this in your own natural way. Continue until they can see that you accept their emotional state and are not judging them for it. "Until they feel validated."</p>
+
+                                </div>
+
+                            </li>
+
+                            <li class="flex items-start">
+
+                                <svg class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                                <div>
+
+                                    <h3 class="font-semibold">Help them find options:</h3>
+
+                                    <p>It is important that an agitated person doesn't feel backed into a corner. Be sure to help them explore their choices. As they calm a little you might be able to help them with some options. e.g. "You could go in and shout at the vicar in front of everyone, but someone would probably call the police, or you could meet with the vicar after the service and talk about your concerns then. </p>
+
+                                </div>
+
+                            </li>
+
+                             <li class="flex items-start">
+
+                                <svg class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                                <div>
+
+                                    <h3 class="font-semibold">Allow for choice:</h3>
+
+                                    <p>This empowers the agitated person to regain control. Offer positive choices. You might suggest... "Would it be helpful to talk with the vicar after this service, or perhaps we could make an appointment for you to raise your concerns later in the week when you are feeling a bit calmer?"</p>
+
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                    <!-- Interactive Scenarios -->
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Practice Scenarios</h2>
+
+                        <div id="scenarios-container" class="space-y-8">
+
+                            <!-- Scenarios will be injected here by JavaScript -->
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!-- Sidebar Column -->
+
+                <div class="md:col-span-1 space-y-8">
+
+                    
+
+                    <!-- Escalation Plan -->
+
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg shadow">
+
+                        <h3 class="text-xl font-semibold text-red-800 mb-3 flex items-center">
+
+                            <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+
+                            </svg>
+
+                            When De-escalation Fails
+
+                        </h3>
+
+                        <p class="text-red-700 mb-4">If the situation escalates or you feel unsafe, your safety is the priority. Follow these steps:</p>
+
+                        <ol class="list-decimal list-inside space-y-2 text-red-700">
+
+                            <li><strong>Signal for Help:</strong> Discreetly get the attention of another team member or leader.</li>
+
+                            <li><strong>Create Distance:</strong> Increase the space between you and the individual.</li>
+
+                            <li><strong>Isolate (if possible):</strong> Guide others away from the immediate area.</li>
+
+                            <li><strong>Do Not Hesitate to Call 111:</strong> If there is any threat of violence or immediate danger, call emergency services. Clearly state your location and the nature of the situation.</li>
+
+                        </ol>
+
+                    </div>
+
+
+
+                    <!-- NZ Resources -->
+
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg shadow">
+
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">NZ Support Resources</h3>
+
+                        <ul class="space-y-3 text-blue-700">
+
+                            <li>
+
+                                <p class="font-semibold">Emergency Services</p>
+
+                                <a href="tel:111" class="hover:underline"><strong>111</strong> (for immediate danger)</a>
+
+                            </li>
+
+                            <li>
+
+                                <p class="font-semibold">National Mental Health & Addiction Helpline</p>
+
+                                <p>Need to talk? Free call or text <a href="tel:1737" class="hover:underline"><strong>1737</strong></a> anytime.</p>
+
+                            </li>
+
+                             <li>
+
+                                <p class="font-semibold">Mental Health Foundation of NZ</p>
+
+                                <a href="https://mentalhealth.org.nz" target="_blank" rel="noopener noreferrer" class="hover:underline">mentalhealth.org.nz</a>
+
+                            </li>
+
+                            <li>
+
+                                <p class="font-semibold">Community Alcohol and Drug Services (CADS)</p>
+
+                                <a href="https://www.cads.org.nz" target="_blank" rel="noopener noreferrer" class="hover:underline">cads.org.nz</a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer class="bg-white mt-8">
+
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+
+            <p>&copy; 2024 Church Safety Training. Be wise, be compassionate, be safe.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        const scenarios = [
+
+            {
+
+                id: 1,
+
+                title: "Person Appears Intoxicated",
+
+                description: "A man stumbles into the foyer during the service. He smells of alcohol, is slurring his words, and is speaking loudly, distracting others.",
+
+                options: [
+
+                    { text: "Immediately tell him to leave or you'll call the police.", isCorrect: false, feedback: "This is confrontational and likely to escalate the situation. Threats can provoke an aggressive or defensive reaction." },
+
+                    { text: "Quietly approach him, introduce yourself, and ask if he's okay and if you can get him a glass of water.", isCorrect: true, feedback: "Correct. This is a gentle, caring approach that de-escalates by showing concern and offering help, rather than starting a conflict." },
+
+                    { text: "Ignore him and hope he leaves on his own.", isCorrect: false, feedback: "Ignoring the situation abdicates responsibility for the safety and peace of the environment. The issue is unlikely to resolve itself and may worsen." },
+
+                    { text: "Ask several large members of the congregation to escort him out.", isCorrect: false, feedback: "This can be perceived as a physical threat and can quickly escalate the situation to violence. It should only be a last resort if safety is compromised." }
+
+                ],
+
+            },
+
+            {
+
+                id: 2,
+
+                title: "Angry and Agitated Individual",
+
+                description: "A woman approaches the welcome desk after the service, shouting that the church 'stole her parking spot'. She is visibly angry, clenching her fists and using profane language.",
+
+                options: [
+
+                    { text: "Argue with her and explain that the car park is public and she's mistaken.", isCorrect: false, feedback: "Arguing invalidates their feelings and puts you in an adversarial position, which will only increase their anger." },
+
+                    { text: "Tell her to calm down and stop swearing in a church.", isCorrect: false, feedback: "Telling an angry person to 'calm down' or policing their language often feels dismissive and can make them even more agitated." },
+
+                    { text: "Listen to her rant, validate her frustration by saying 'I can see you're very upset,' and ask 'How can we help make this right?'", isCorrect: true, feedback: "Correct. By validating their feelings (not their actions), you show you're listening. This lowers their defenses and moves the conversation toward a solution." },
+
+                    { text: "Walk away and get the senior pastor to deal with her.", isCorrect: false, feedback: "While getting a leader can be a good step, simply walking away can feel dismissive and might escalate their attempts to be heard." }
+
+                ],
+
+            },
+
+            {
+
+                id: 3,
+
+                title: "Person in Apparent Mental Distress",
+
+                description: "During a quiet moment of prayer, a person begins talking to themselves loudly, referencing things that don't make sense. They seem distressed and unaware of their surroundings.",
+
+                options: [
+
+                    { text: "Calmly and quietly approach them, maintaining a safe distance. Speak in a low, gentle voice and ask, 'You seem to be in distress. Is there anything I can do to help?'", isCorrect: true, feedback: "Correct. A calm, non-threatening approach is crucial. Acknowledging their distress without judgment opens a door for communication while maintaining safety." },
+
+                    { text: "Go over and tap them on the shoulder to get their attention.", isCorrect: false, feedback: "Unexpected physical contact can be startling and frightening to someone in distress, potentially escalating their fear or causing an unpredictable reaction." },
+
+                    { text: "Announce to the congregation that someone needs help and to please give them space.", isCorrect: false, feedback: "This would draw unwanted attention and likely cause the person significant embarrassment or increased anxiety, making the situation worse." },
+
+                    { text: "Immediately call 111 as they are clearly having a psychotic episode.", isCorrect: false, feedback: "While a valid step if there's a threat, it's premature here. The first step should always be a calm attempt to assess and de-escalate, unless there is immediate danger." }
+
+                ],
+
+            },
+
+            {
+
+                id: 4,
+
+                title: "Couple Arguing Loudly",
+
+                description: "In the church cafe, a couple begins to have a heated, personal argument. Their voices are rising, and people are starting to stare uncomfortably.",
+
+                options: [
+
+                    { text: "Interrupt them and tell them this is a church and they need to take their fight elsewhere.", isCorrect: false, feedback: "This is shaming and confrontational. It will likely redirect their anger towards you and escalate the public scene." },
+
+                    { text: "Approach them calmly and quietly ask, 'It seems like a difficult moment. Would there be a more private space where you could talk?'", isCorrect: true, feedback: "Correct. This approach is respectful, non-judgmental, and offers a practical solution. It acknowledges their conflict without taking sides and aims to restore peace to the public area." },
+
+                    { text: "Pretend you don't hear it and instruct the cafe staff to ignore them.", isCorrect: false, feedback: "Ignoring a disruptive conflict neglects your duty of care for the overall environment. Other members may feel unsafe or uncomfortable, and the conflict could escalate." },
+
+                    { text: "Go over and try to mediate their argument by asking what the problem is.", isCorrect: false, feedback: "Never get involved in the content of a domestic dispute. It is not your role to be a counselor, and you could easily make things worse or even put yourself in danger." }
+
+                ],
+
+            }
+
+        ];
+
+
+
+        const scenariosContainer = document.getElementById('scenarios-container');
+
+
+
+        function createScenarioCard(scenario) {
+
+            const card = document.createElement('div');
+
+            card.className = 'scenario-card border border-gray-200 p-5 rounded-lg';
+
+            card.dataset.id = scenario.id;
+
+
+
+            let optionsHtml = '';
+
+            scenario.options.forEach((option, index) => {
+
+                optionsHtml += `
+
+                    <div class="option-wrapper mt-2">
+
+                        <button data-correct="${option.isCorrect}" data-feedback="${option.feedback}" class="option-btn w-full text-left p-3 border rounded-md hover:bg-gray-100">${option.text}</button>
+
+                        <div class="feedback-text p-3 mt-2 rounded-md text-sm"></div>
+
+                    </div>
+
+                `;
+
+            });
+
+
+
+            card.innerHTML = `
+
+                <h3 class="text-xl font-semibold text-gray-800">${scenario.title}</h3>
+
+                <p class="text-gray-600 mt-2 mb-4">${scenario.description}</p>
+
+                <p class="font-semibold text-gray-700 mb-2">Choose the best response:</p>
+
+                <div class="options-container">${optionsHtml}</div>
+
+            `;
+
+            return card;
+
+        }
+
+
+
+        scenarios.forEach(scenario => {
+
+            const card = createScenarioCard(scenario);
+
+            scenariosContainer.appendChild(card);
+
+        });
+
+
+
+        scenariosContainer.addEventListener('click', function(e) {
+
+            if (e.target.classList.contains('option-btn')) {
+
+                const card = e.target.closest('.scenario-card');
+
+                if (card.classList.contains('answered')) return; // Prevent re-answering
+
+
+
+                card.classList.add('answered');
+
+                
+
+                const selectedBtn = e.target;
+
+                const isCorrect = selectedBtn.dataset.correct === 'true';
+
+                const feedbackText = selectedBtn.dataset.feedback;
+
+                
+
+                const feedbackEl = selectedBtn.nextElementSibling;
+
+                feedbackEl.textContent = feedbackText;
+
+                feedbackEl.classList.add('visible');
+
+
+
+                if (isCorrect) {
+
+                    selectedBtn.classList.add('correct');
+
+                    feedbackEl.classList.add('bg-green-100', 'text-green-800', 'border-l-4', 'border-green-500');
+
+                } else {
+
+                    selectedBtn.classList.add('incorrect');
+
+                    feedbackEl.classList.add('bg-red-100', 'text-red-800', 'border-l-4', 'border-red-500');
+
+                }
+
+
+
+                const allButtons = card.querySelectorAll('.option-btn');
+
+                allButtons.forEach(btn => {
+
+                    btn.disabled = true;
+
+                    if (btn.dataset.correct === 'true' && btn !== selectedBtn) {
+
+                        btn.classList.add('correct');
+
+                    }
+
+                });
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+
